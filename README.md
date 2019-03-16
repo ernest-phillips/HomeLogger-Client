@@ -11,11 +11,11 @@ add text story content to an open-ended fictional story.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-*React
-*NodeJS
-*ES6
-*SASS
+* React
+* NodeJS
+* ES6
+* SASS
 
-![Community story screenshot](public\images\homeScreen.PNG)
+![Community story screenshot](https://github.com/ernest-phillips/community-story-fe/blob/feature-branch/public/images/homeScreen.PNG)
 
 
