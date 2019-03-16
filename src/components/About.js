@@ -3,7 +3,9 @@ import React from 'react'
 export default function About() {
   return (
     <article>
-      <p><span className="first-word">Welcome</span> to the Community Story app!
+      <p className="about">
+      <span className="first-word">Welcome</span> to the Community Story app!
+      <br />
           This is an open-ended story that YOU create!
           Collaborate with the world in developing this awesome 
           fictional tale. 
