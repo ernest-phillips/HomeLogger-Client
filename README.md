@@ -16,6 +16,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * ES6
 * SASS
 
-![Community story screenshot](https://github.com/ernest-phillips/community-story-fe/blob/feature-branch/public/images/homeScreen.PNG)
+![Community story screenshot](https://github.com/ernest-phillips/community-story-fe/blob/feature-branch/public/images/homeScreen.PNG =150)
 
 
