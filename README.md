@@ -1,21 +1,21 @@
-#Community Story
+# Community Story
 See live app here: www.linkComingSoon 
 
-##Summary
+## Summary
 This is a React application that allows users to
 add text story content to an open-ended fictional story.
 
 
 
-##Technologies
+## Technologies
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-..*React
-..*NodeJS
-..*ES6
-..*SASS
+*React
+*NodeJS
+*ES6
+*SASS
 
-![Community story screenshot][screenshot]
-[screenshot]:public\images\homeScreen.PNG
+![Community story screenshot](public\images\homeScreen.PNG)
+
 
