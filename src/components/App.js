@@ -5,25 +5,36 @@ import Header from './Header'
 import Footer from './Footer'
 import SignIn from './SignIn'
 import NavBar from './NavBar'
+import FullStory from './FullStory'
+import {
+  BrowserRouter as Router, 
+  Route,
+  Switch
+  
+} from 'react-router-dom'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="Site" >
-        <NavBar />
-          <Header />
-          <main className="Site-content">
-            <div className="inner-content">
-              
-              <About />
-              {/* <SignIn /> */}
-            </div>        
-          </main>
-          <Footer />
-      </div>
-      
+function App () {    
+      return (
+        <Router>
+          <div className="Site" >
+            <NavBar />
+              <Header />
+              <main className="Site-content">
+                <div className="inner-content">
+                  <Switch>
+                    <Route exact path="/" component={About} />
+                    <Route path="/sign-in" component={SignIn}/>
+                    <Route path="/story" component={FullStory}/>
+                  </Switch>                  
+                </div>        
+              </main>
+              <Footer />
+          </div>
+        </Router>
     );
-  }
+    
+    
+  
 }
 
 export default App;
