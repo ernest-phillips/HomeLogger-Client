@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div>
-        <article className="about-wrap">
+    <div className="about-wrap">
+        <article >
             <p className="about">
             <span className="first-word">Welcome</span> to the Community Story app!
             <br />
