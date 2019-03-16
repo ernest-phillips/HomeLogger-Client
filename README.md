@@ -17,5 +17,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * SASS
 
 ![](https://github.com/ernest-phillips/community-story-fe/blob/feature-branch/public/images/homeScreen.PNG =150x)
-<img src="public/images/homeScreen.PNG" alt="homepage screenshot" width="150">
+<img src="public/images/homeScreen.PNG" alt="homepage screenshot" width="400">
 
