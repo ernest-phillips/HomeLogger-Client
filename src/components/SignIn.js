@@ -24,6 +24,12 @@ export default class SignIn extends Component {
                 
             </form>
         </fieldset>
+
+        <div className="test-account">
+            <p className="test-text">Test email: test@email.com</p>
+            
+            <p className="test-text">Password: password1</p>
+        </div>
     </div>
     )
   }

@@ -1,7 +1,7 @@
 // colors
-$color-body: #1abc9c;
-$color-accent: #16a085;
-$color-input: #fff;
+$color-body: #2C3E50;
+$color-accent: #2C3E50;
+$color-input: rgb(245, 248, 248);
 
 
 //    fix position radio input off-canvas
@@ -44,7 +44,8 @@ input:not([type="radio"]) {
 button {
     width: 250px;
     height: 40px;
-    border-radius: 7px;    
+    border-radius: 7px;  
+    color: #ccc;
     background-color: $color-accent;
     font-size: 0;
     &:before { font-size: 16px; }
@@ -62,6 +63,7 @@ label {
     display: inline-block;
     text-align: center;
     font-weight: 700;
+    font-size: 1.1rem;
     cursor: pointer;
     color: $color-accent;
     transition: 300ms ease;
@@ -82,7 +84,7 @@ label {
 [id="sign-in"]:checked ~ [for="sign-in"],
 [id="sign-up"]:checked ~ [for="sign-up"],
 [id="reset"]:checked ~ [for="reset"] {
-    color: $color-input;
+    color: rgb(58, 160, 49);
     &:after {
         border-bottom-color: $color-input;
     }
@@ -98,9 +100,34 @@ label {
     flex-wrap: wrap;
     height: 300px;
     text-align: center;
+    
 }
 
 body {
     background-color: $color-body;
-    font-size: 16px;
+    // font-size: 1.5rem;
+}
+
+fieldset{
+    border: none;
+}
+button{
+    border: none;
+}
+
+.test-account{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 5px;
+    flex-direction: column;
+    
+
+}
+
+.test-text{
+    display: block;
+    font-size: 1.25rem;
+    margin: 5px;
+    
 }

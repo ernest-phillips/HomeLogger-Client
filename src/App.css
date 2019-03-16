@@ -7,17 +7,29 @@ body{
   background: -webkit-linear-gradient(to top, #333, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #333, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin: 0 auto;
-}
-html, body{
-  height: 100%;
+  
   
 }
+html, body{
+  height: 100vh;  
+  
+}
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
 main {
+  flex: 1;
   margin-top: 50px;
   padding: 15px;
   background-color:	#fff;
   display: flex;
-  height: 100vh;
   width: 760px;
   margin-left:auto;
   margin-right:auto;
@@ -62,13 +74,21 @@ footer{
   margin-bottom: 0px;
   font-family: 'Oswald', serif;
 }
+.about-wrap{
+  /* flex-direction: column; */
+  display: flex;
+  justify-content: center;
+}
 .about{
   font-size: 1.5rem;
   font-family: 'Open sans';
   width: 75%;
   padding: 5px;
   color: #333;
-  max-height: 300px
+  max-height: 300px;
+  /* text-align: justify; */
+  /* text-justify: inter-word; */
+  
   
 
 }
@@ -79,4 +99,40 @@ footer{
   font-family: 'Oswald', sans-serif;
  
 
+}
+
+/* NAV BAR  */
+nav{
+  /* position: fixed; */
+  top: 0px;
+  left: 0px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #222;
+}
+
+nav ul{
+  list-style-type: none;
+  text-align: center;
+  margin-top: 0
+}
+
+nav ul li{
+  display: inline-block;
+  text-align: center;
+  padding: 20px;
+  height: 2%;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+  font-size: 1.25rem
+}
+
+/* an underline appears at the bottom on hover of each link */
+nav ul li a:hover, nav ul li a:active{
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
 }
