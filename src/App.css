@@ -105,6 +105,11 @@ footer{
   font-family: 'Open sans', serif
 }
 
+.post-add {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 /* NAV BAR  */
 nav{
   /* position: fixed; */
