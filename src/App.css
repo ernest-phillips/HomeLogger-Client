@@ -99,6 +99,12 @@ footer{
 
 }
 
+.paragraph{
+  max-width: 75%;
+  font-size: 1.05rem;
+  font-family: 'Open sans', serif
+}
+
 /* NAV BAR  */
 nav{
   /* position: fixed; */
