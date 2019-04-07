@@ -16,9 +16,9 @@ export default class SignIn extends Component {
                 <label for="sign-up">Sign up</label>
                 <label for="reset">Reset</label>  
     
-                <input class="sign-up sign-in reset" type="email" placeholder="Email" />
-                <input class="sign-up sign-in" type="password" placeholder ="Password" />
-                <input class="sign-up" type="password" placeholder ="Repeat Password" />
+                <input className="sign-up sign-in reset" type="email" placeholder="Email" />
+                <input className="sign-up sign-in" type="password" placeholder ="Password" />
+                <input className="sign-up" type="password" placeholder ="Repeat Password" />
                 <button>Submit</button>        
                 
                 

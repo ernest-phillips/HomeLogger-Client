@@ -5,12 +5,12 @@ export default function About() {
     <div className="about-wrap">
         <article >
             <p className="about">
-            <span className="first-word">Welcome</span> to the Community Story app!
+            <span className="first-word">Welcome</span> to <span className="title">Community Story</span>!
             <br />
                 This is an open-ended story that YOU create!
                 Collaborate with the world in developing this awesome 
                 fictional tale. 
-                Each portion of the story is only 140 characters long.
+                Each passage can be up to 500 characters long.
                 So be creative with how you add to the story. You can 
                 add as many posts as you like. 
                 Your posts can also be get Likes from visitors!
