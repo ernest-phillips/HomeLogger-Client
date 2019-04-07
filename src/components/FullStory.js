@@ -21,7 +21,7 @@ export default class FullStory extends Component {
 
     const newParagraph = this.state.entries.map(item => <StoryContent key={item.id} item={item}/>)
     return (
-      <div >
+      <div className="full-story">
         <h1>Story Goes Here</h1>
         <StoryStart />
         {newParagraph}
