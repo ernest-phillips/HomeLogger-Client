@@ -8,6 +8,7 @@
     "react-dom": "^16.8.4",
     "react-router-dom": "^4.4.0",
     "react-scripts": "2.1.8",
+    "redux-starter-kit": "^0.4.3",
     "travis": "^0.1.1"
   },
   "scripts": {

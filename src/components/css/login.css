@@ -1,0 +1,54 @@
+.item{
+    border: 2px solid #2C3E50;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    height: 40px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+}
+
+fieldset{
+    border: 0px
+}
+
+.login-btn{
+    width: 250px;
+    height: 40px;
+    background-color: #2C3E50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.test-account{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 5px
+    
+}
+
+.test-text{
+    font-size: 1rem;
+    padding: 0;
+    margin: 5px
+}
+
+.reg-text{
+    font-size: .75rem
+}
+
+.reg-text a{
+    font-size: .75rem;
+    text-decoration: none;
+}
