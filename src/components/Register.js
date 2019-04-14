@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './css/login.css'
-import '../index.css'
+// import './css/login.css'
+// import '../css/index.css'
 
 
 export default class Register extends Component {

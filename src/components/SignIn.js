@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './css/login.css'
-import '../index.css'
+// import './css/login.css'
+// import '../index.css'
 
 
 export default class SignIn extends Component {
