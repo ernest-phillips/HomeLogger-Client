@@ -5,7 +5,7 @@ body *{
 body{
   
   margin: 0 auto;
-  background-color: #F2EECB
+  background-color: #F5f5f5
   
 }
 html, body{
@@ -190,6 +190,37 @@ nav ul li a:hover, nav ul li a:active{
   }
 } 
 
+/* New Passage Box */
+.passage-entry{
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(192, 186, 194);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  padding-left: 10px
+}
+.add-pass{
+  background-color: #2C3E50;
+  max-width: 150px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  
+  
+}
+/* Open+Sans|Oswald */
+.add-pass a{
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  
+}
 @media only screen and (max-width: 400px){
   .about {
     font-size: .75rem

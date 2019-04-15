@@ -1,25 +1,33 @@
-import React, { Component } from 'react'
-// import './css/login.css'
-// import '../css/index.css'
+import React, { Component } from "react";
 
 
 export default class Register extends Component {
+  onSubmit(values) {
+    const { username, password} = values;
+    const user = { username, password};
+    return this.props
+      .dispatch(registerUser(user))
+      .then(() => this.props.dispatch(login(username, password)));
+  }
   render() {
     return (
-        <div class="flex-wrap">
+      <div class="flex-wrap">
         <fieldset>
-        <form id="login-form" action="" method="POST">
-            <input className="item" id="username-txt" type="text" placeholder="username" name="username" autocomplete="off" required/>
-            <input className="item" id="password-txt" type="password" placeholder="password" name="password" autocomplete="off" required />
+          <form id="login-form" action="" method="POST"
+           onSubmit={this.props.handleSubmit(values =>
+            this.onSubmit(values)
+        )}
+          >
             <button className="login-btn">CREATE ACCOUNT</button>
-        </form>
+          </form>
         </fieldset>
 
         <div className="test-account">
-        
-            <p className="reg-text">Already have an account? <a href="/sign-in" >Login</a></p>
+          <p className="reg-text">
+            Already have an account? <a href="/sign-in">Login</a>
+          </p>
         </div>
-    </div>
-    )
+      </div>
+    );
   }
 }

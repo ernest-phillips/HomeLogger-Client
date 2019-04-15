@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import SignIn from "./SignIn";
 import NavBar from "./NavBar";
 import FullStory from "./FullStory";
+
 import Register from "./Register";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 

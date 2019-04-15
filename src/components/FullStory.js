@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import stories from './entries'
 import StoryContent from './StoryContent'
+import Contribute from './Contribute'
+import NewPassageBox from './NewPassageBox'
+
+
 function StoryStart () {
   return(
     <p className="paragraph">
@@ -22,9 +26,11 @@ export default class FullStory extends Component {
     const newParagraph = this.state.entries.map(item => <StoryContent key={item.id} item={item}/>)
     return (
       <div className="full-story">
+      <Contribute />
         <h1>Story Goes Here</h1>
         <StoryStart />
         {newParagraph}
+        <NewPassageBox />
       </div>
     )
   }
