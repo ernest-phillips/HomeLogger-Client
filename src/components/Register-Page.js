@@ -8,12 +8,12 @@ export function RegisterPage(props) {
     // If we are logged in (which happens automatically when registration
     // is successful) redirect to the user's dashboard
     if (props.loggedIn) {
-        return <Redirect to="/dashboard" />;
+        return <Redirect to="/story" />;
     }
     return (
         <div className="home">
             <h2>Register for Foo App</h2>
-            <RegistrationForm />
+            <Register />
             <Link to="/">Login</Link>
         </div>
     );
