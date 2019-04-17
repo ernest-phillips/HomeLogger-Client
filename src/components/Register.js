@@ -5,7 +5,7 @@ import {login} from '../actions/auth';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import Input from './Input'
 
-const passwordLength = length({min: 10, max: 72});
+const passwordLength = length({min: 8, max: 72});
 const matchesPassword = matches('password');
 
 export class Register extends Component {

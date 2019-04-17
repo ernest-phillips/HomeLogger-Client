@@ -1,4 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter  } from "react-router-dom";
 import "./css/App.css";
 import "./css/index.css";
 import "./css/login.css";
@@ -8,30 +10,67 @@ import Footer from "./Footer";
 import SignIn from "./SignIn";
 import NavBar from "./NavBar";
 import FullStory from "./FullStory";
+import { refreshAuthToken } from "../actions/auth";
 
 import Register from "./Register";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <Router>
-      <div className="Site">
-        <NavBar />
-        <Header />
-        <main className="Site-content">
-          <div className="inner-content">
-            <Switch>
-              <Route exact path="/" component={About} />
-              <Route path="/sign-in" component={SignIn} />
-              <Route path="/story" component={FullStory} />
-              <Route path="/register" component={Register} />
-            </Switch>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  );
+export class App extends Component {
+  componentDidUpdate(prevProps) {
+    if (!prevProps.loggedIn && this.props.loggedIn) {
+      // When we are logged in, refresh the auth token periodically
+      this.startPeriodicRefresh();
+    } else if (prevProps.loggedIn && !this.props.loggedIn) {
+      // Stop refreshing when we log out
+      this.stopPeriodicRefresh();
+    }
+  }
+
+  componentWillUnmount() {
+    this.stopPeriodicRefresh();
+  }
+
+  startPeriodicRefresh() {
+    this.refreshInterval = setInterval(
+      () => this.props.dispatch(refreshAuthToken()),
+      60 * 60 * 1000 // One hour
+    );
+  }
+
+  stopPeriodicRefresh() {
+    if (!this.refreshInterval) {
+      return;
+    }
+
+    clearInterval(this.refreshInterval);
+  }
+
+  render() {
+    return (
+      <Router>
+        <div className="Site">
+          <NavBar />
+          <Header />
+          <main className="Site-content">
+            <div className="inner-content">
+              <Switch>
+                <Route exact path="/" component={About} />
+                <Route path="/sign-in" component={SignIn} />
+                <Route path="/story" component={FullStory} />
+                <Route path="/register" component={Register} />
+              </Switch>
+            </div>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  hasAuthToken: state.auth.authToken !== null,
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default withRouter(connect(mapStateToProps)(App));
