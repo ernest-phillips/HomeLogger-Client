@@ -18,35 +18,43 @@ export class SignIn extends Component {
       );
     }
     return (
-      <div class="flex-wrap">
+      <div className="flex-wrap">
         <fieldset>
           <form
             className="login-form"
-            onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
-          >
+            onSubmit={this.props.handleSubmit(values => 
+              this.onSubmit(values)
+              )}>
             {error}
+            <label htmlFor="username">Username</label>
             <Field
               component={Input}
-              className="item"
-              name="username"
               type="text"
+              name="username"
+              id="username"              
+              validate={[required, nonEmpty]}
+              
               placeholder="username"
-              validate={[required,nonEmpty]}
             />
+            <label htmlFor="password">Password</label>
             <Field
               component={Input}
-              className="item"
+              
               name="password"
               type="password"
-              placeholder="password"              
-              validate={[required,nonEmpty]}
+              placeholder="password"
+              validate={[required, nonEmpty]}
             />
-            <button className="login-btn">Sign</button>
+            <button
+              disabled={this.props.pristine || this.props.submitting}
+              className="login-btn">
+              Sign In
+            </button>
           </form>
         </fieldset>
 
         <div className="test-account">
-          <p className="test-text">Test email: test@email.com</p>
+          <p className="test-text">Test User: user123</p>
 
           <p className="test-text">Password: password1</p>
           <p className="reg-text">
@@ -60,4 +68,4 @@ export class SignIn extends Component {
 export default reduxForm({
   form: "login",
   onSubmitFail: (errors, dispatch) => dispatch(focus("login", "username"))
-});
+})(SignIn);
