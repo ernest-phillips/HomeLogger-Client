@@ -37,6 +37,7 @@ export const authError = error => ({
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
+    
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user));
     saveAuthToken(authToken);
@@ -54,9 +55,10 @@ export const login = (username, password) => dispatch => {
                 username,
                 password
             })
+            
         })
             // Reject any requests which don't return a 200 status, creating
-            // errors which follow a consistent format
+            // errors which follow a consistent format            
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
@@ -69,6 +71,7 @@ export const login = (username, password) => dispatch => {
                 dispatch(authError(err));
                 // Could not authenticate, so return a SubmissionError for Redux
                 // Form
+                console.log(err)
                 return Promise.reject(
                     new SubmissionError({
                         _error: message

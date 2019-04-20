@@ -7,7 +7,7 @@ import "./css/login.css";
 import About from "./About";
 import Header from "./Header";
 import Footer from "./Footer";
-import SignIn from "./SignIn";
+import SignInForm from "./SignIn";
 import NavBar from "./NavBar";
 import FullStory from "./FullStory";
 import { refreshAuthToken } from "../actions/auth";
@@ -55,7 +55,7 @@ export class App extends Component {
             <div className="inner-content">
               <Switch>
                 <Route exact path="/" component={About} />
-                <Route path="/sign-in" component={SignIn} />
+                <Route path="/sign-in" component={SignInForm} />
                 <Route path="/story" component={FullStory} />
                 <Route path="/register" component={Register} />
               </Switch>

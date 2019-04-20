@@ -4,7 +4,7 @@ import Input from "./Input";
 import { login } from "../actions/auth";
 import { required, nonEmpty } from "../validators";
 
-export class SignIn extends Component {
+export class SignInForm extends Component {
   onSubmit(values) {
     return this.props.dispatch(login(values.username, values.password));
   }
@@ -18,7 +18,7 @@ export class SignIn extends Component {
       );
     }
     return (
-      <div class="flex-wrap">
+      <div className="flex-wrap">
         <fieldset>
           <form
             className="login-form"
@@ -27,21 +27,24 @@ export class SignIn extends Component {
             {error}
             <Field
               component={Input}
-              className="item"
               name="username"
               type="text"
               placeholder="username"
-              validate={[required,nonEmpty]}
+              validate={[required, nonEmpty]}
             />
             <Field
               component={Input}
-              className="item"
               name="password"
               type="password"
-              placeholder="password"              
-              validate={[required,nonEmpty]}
+              placeholder="password"
+              validate={[required, nonEmpty]}
             />
-            <button className="login-btn">Sign</button>
+            <button
+              disabled={this.props.pristine || this.props.submitting}
+              className="login-btn"
+            >
+              Sign
+            </button>
           </form>
         </fieldset>
 
@@ -60,4 +63,4 @@ export class SignIn extends Component {
 export default reduxForm({
   form: "login",
   onSubmitFail: (errors, dispatch) => dispatch(focus("login", "username"))
-});
+})(SignInForm);
