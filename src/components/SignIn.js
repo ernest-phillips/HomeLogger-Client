@@ -41,15 +41,14 @@ export class SignInForm extends Component {
             />
             <button
               disabled={this.props.pristine || this.props.submitting}
-              className="login-btn"
-            >
+              className="login-btn">
               Sign
             </button>
           </form>
         </fieldset>
 
         <div className="test-account">
-          <p className="test-text">Test email: test@email.com</p>
+          <p className="test-text">Username: user123</p>
 
           <p className="test-text">Password: password1</p>
           <p className="reg-text">

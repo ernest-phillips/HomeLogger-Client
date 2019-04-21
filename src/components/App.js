@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter  } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./css/App.css";
 import "./css/index.css";
 import "./css/login.css";
@@ -9,6 +9,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import SignInForm from "./SignIn";
 import NavBar from "./NavBar";
+import Dashboard from "./Dashboard";
 import FullStory from "./FullStory";
 import { refreshAuthToken } from "../actions/auth";
 
@@ -59,6 +60,7 @@ export class App extends Component {
                 <Route path="/story" component={FullStory} />
                 <Route path="/register" component={Register} />
               </Switch>
+              <Route exact path="/dashboard" component={Dashboard} />
             </div>
           </main>
           <Footer />

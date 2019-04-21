@@ -74,7 +74,8 @@ footer{
   /* flex-direction: column; */
   display: flex;
   justify-content: center;
-  /* align-items: center */
+  align-items: center;
+  flex-direction: column;
 }
 .about{
   font-size: 1rem;
@@ -86,6 +87,27 @@ footer{
   
   
 }
+.start{
+  display: flex;  
+  text-align: center;
+  margin: 0 auto
+  
+}
+.btn-start{
+  margin-top:25px;
+  width: 250px;
+  height: 40px;
+  background-color:#2C3E50;
+  color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 7px
+}
+
 
 .first-word{
   font-weight: bold;

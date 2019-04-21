@@ -10,7 +10,12 @@ export const registerUser = user => dispatch => {
             'content-type': 'application/json'
         },
         body: JSON.stringify(user)
+    }).then(function(res){
+        return res.json()
     })
+    .then((function(myJson){
+        console.log(JSON.stringify(myJson))
+    }))         
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .catch(err => {

@@ -4,7 +4,7 @@ export const loadAuthToken = () => {
 
 export const saveAuthToken = authToken => {
   try {
-    console.log(authToken)
+    
     localStorage.setItem("authToken", authToken);
   } catch (e) {}
 };
