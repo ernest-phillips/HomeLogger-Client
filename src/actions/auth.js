@@ -61,15 +61,16 @@ export const login = (username, password) => dispatch => {
         })
             
             .then(res => normalizeResponseErrors(res))
-            // .then(res => res.json()) 
-            .then(res => console.log(res.json()))         
-            .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-            
+            .then(res => res.json()) 
+            // .then(res => console.log(res.json()))
             .then((function(myJson){
                 console.log("doing this too")
                 console.log(JSON.stringify(myJson))
+                JSON.stringify(myJson)
                 
-            }))   
+            }))          
+            .then(({authToken}) => storeAuthInfo(authToken, dispatch))     
+              
             .catch(err => {
                 const {code} = err;
                 const message =
