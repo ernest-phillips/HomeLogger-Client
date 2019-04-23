@@ -48,7 +48,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
     return (
-        fetch(`${API_BASE_URL}/auth/login`, {
+        fetch(`${API_BASE_URL}/auth`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -63,13 +63,13 @@ export const login = (username, password) => dispatch => {
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json()) 
             // .then(res => console.log(res.json()))
-            .then((function(myJson){
-                console.log("doing this too")
-                console.log(JSON.stringify(myJson))
-                JSON.stringify(myJson)
+            // .then((function(myJson){
+            //     console.log("doing this too")
+            //     console.log(JSON.stringify(myJson))
+            //     JSON.stringify(myJson)
                 
-            }))          
-            .then(({authToken}) => storeAuthInfo(authToken, dispatch))     
+            // }))          
+            .then(({jwtToken}) => storeAuthInfo(jwtToken, dispatch))     
               
             .catch(err => {
                 const {code} = err;
