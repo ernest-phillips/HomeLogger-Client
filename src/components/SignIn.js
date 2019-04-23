@@ -25,23 +25,28 @@ export class SignInForm extends Component {
             onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
           >
             {error}
+            <label htmlFor="username">Username</label>
             <Field
               component={Input}
-              name="username"
               type="text"
-              placeholder="username"
+              name="username"
+              id="username"
               validate={[required, nonEmpty]}
+              placeholder="username"
             />
+            <label htmlFor="password">Password</label>
             <Field
               component={Input}
-              name="password"
               type="password"
-              placeholder="password"
+              name="password"
+              id="password"
               validate={[required, nonEmpty]}
+              placeholder="password"
             />
             <button
               disabled={this.props.pristine || this.props.submitting}
-              className="login-btn">
+              className="login-btn"
+            >
               Sign
             </button>
           </form>
