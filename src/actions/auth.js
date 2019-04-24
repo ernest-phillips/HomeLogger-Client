@@ -36,16 +36,19 @@ export const authError = error => ({
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
-    const decodedToken = jwtDecode(authToken);
+    const decodedToken = jwtDecode(authToken);    
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user));
     saveAuthToken(authToken);
+    console.log("Decoded Token:",decodedToken)
+    console.log("Auth Token:",authToken)
+    
 };
 
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
     return (
-        fetch(`${API_BASE_URL}/auth/login`, {
+        fetch(`${API_BASE_URL}/auth`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -53,13 +56,21 @@ export const login = (username, password) => dispatch => {
             body: JSON.stringify({
                 username,
                 password
-            })
+            }), 
+            
         })
-            // Reject any requests which don't return a 200 status, creating
-            // errors which follow a consistent format
+            
             .then(res => normalizeResponseErrors(res))
-            .then(res => res.json())
-            .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+            .then(res => res.json()) 
+            // .then(res => console.log(res.json()))
+            // .then((function(myJson){
+            //     console.log("doing this too")
+            //     console.log(JSON.stringify(myJson))
+            //     JSON.stringify(myJson)
+                
+            // }))          
+            .then(({jwtToken}) => storeAuthInfo(jwtToken, dispatch))     
+              
             .catch(err => {
                 const {code} = err;
                 const message =
@@ -69,6 +80,8 @@ export const login = (username, password) => dispatch => {
                 dispatch(authError(err));
                 // Could not authenticate, so return a SubmissionError for Redux
                 // Form
+                console.log(err)
+                
                 return Promise.reject(
                     new SubmissionError({
                         _error: message

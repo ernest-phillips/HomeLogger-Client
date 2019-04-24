@@ -18,6 +18,11 @@ export default function About() {
             </p>
       
     </article>
+    <div className="start">
+      <a className="btn-start"href="/sign-in">Get Started</a>
+      
+    </div>
+      
        
         </div>
     
