@@ -18,6 +18,7 @@ const store = createStore(
 // Hydrate the authToken from localStorage if it exist
 const authToken = loadAuthToken();
 if (authToken) {
+    console.log("Auth token Refreshed!")
     const token = authToken;
     store.dispatch(setAuthToken(token));
     store.dispatch(refreshAuthToken());
