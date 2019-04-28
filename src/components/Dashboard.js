@@ -16,12 +16,13 @@ export class Dashboard extends React.Component {
             <div className="dashboard">
                 <div className="dashboard-username">
                     Username: {this.props.username}
-                </div>
+                </div>              
                 
+                <NewPassageBox />
+
                 <div className="dashboard-protected-data">
                     Protected data: {this.props.protectedData}
                 </div>
-                <NewPassageBox />
             </div>
         );
     }

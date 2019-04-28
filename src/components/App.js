@@ -59,8 +59,9 @@ export class App extends Component {
                 <Route path="/sign-in" component={SignInForm} />
                 <Route path="/story" component={FullStory} />
                 <Route path="/register" component={Register} />
-                <Route path="/dashboard" component={Dashboard} />
+                <Route exact path="/dashboard" component={Dashboard} />
               </Switch>
+              
             </div>
           </main>
           <Footer />
