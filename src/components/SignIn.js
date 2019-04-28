@@ -22,9 +22,8 @@ export class SignInForm extends Component {
         <fieldset>
           <form
             className="login-form"
-            onSubmit={this.props.handleSubmit(values => 
-              this.onSubmit(values)
-              )}>
+            onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+          >
             {error}
             <label htmlFor="username">Username</label>
             <Field
@@ -48,7 +47,7 @@ export class SignInForm extends Component {
               disabled={this.props.pristine || this.props.submitting}
               className="login-btn"
             >
-              Sign
+              Sign In
             </button>
           </form>
         </fieldset>
