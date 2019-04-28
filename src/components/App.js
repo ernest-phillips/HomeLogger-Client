@@ -19,10 +19,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 export class App extends Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
-      // When we are logged in, refresh the auth token periodically
       this.startPeriodicRefresh();
     } else if (prevProps.loggedIn && !this.props.loggedIn) {
-      // Stop refreshing when we log out
       this.stopPeriodicRefresh();
     }
   }
@@ -59,8 +57,8 @@ export class App extends Component {
                 <Route path="/sign-in" component={SignInForm} />
                 <Route path="/story" component={FullStory} />
                 <Route path="/register" component={Register} />
+                <Route path="/dashboard" component={Dashboard} />
               </Switch>
-              <Route exact path="/dashboard" component={Dashboard} />
             </div>
           </main>
           <Footer />
