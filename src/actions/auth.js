@@ -40,8 +40,6 @@ const storeAuthInfo = (authToken, dispatch) => {
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user));
     saveAuthToken(authToken);
-    console.log("Decoded Token:",decodedToken)
-    console.log("Auth Token:",authToken)
     
 };
 
@@ -69,8 +67,7 @@ export const login = (username, password) => dispatch => {
             //     JSON.stringify(myJson)
                 
             // }))          
-            .then(({jwtToken}) => storeAuthInfo(jwtToken, dispatch))     
-              
+            .then(({jwtToken}) => storeAuthInfo(jwtToken, dispatch))               
             .catch(err => {
                 const {code} = err;
                 const message =
@@ -78,8 +75,7 @@ export const login = (username, password) => dispatch => {
                         ? 'Incorrect username or password'
                         : 'Unable to login, please try again';
                 dispatch(authError(err));
-                // Could not authenticate, so return a SubmissionError for Redux
-                // Form
+                
                 console.log(err)
                 
                 return Promise.reject(
