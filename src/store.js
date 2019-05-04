@@ -15,7 +15,7 @@ const store = createStore(
     applyMiddleware(thunk)
 );
 
-// Hydrate the authToken from localStorage if it exist
+// Hydrate the jwtToken from localStorage if it exist
 const jwtToken = loadAuthToken();
 if (jwtToken) {
     console.log("Auth token Refreshed!")
