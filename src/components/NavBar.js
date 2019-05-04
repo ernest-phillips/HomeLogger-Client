@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AuthStatusBtn from './AuthStatusBtn'
 
 class NavBar extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class NavBar extends Component {
         <ul>
             <li> <a href="/">Home</a>   </li>
             <li> <a href="/story">Full Story</a> </li>
-            <li>   </li>
+            <li>  <AuthStatusBtn /> </li>
           </ul>
           {this.state.active }
           <button type="button" onClick={this.handleClick}>Click</button>
