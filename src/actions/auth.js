@@ -6,9 +6,9 @@ import {normalizeResponseErrors} from './utils';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
-export const setAuthToken = authToken => ({
+export const setAuthToken = jwtToken => ({
     type: SET_AUTH_TOKEN,
-    authToken
+    jwtToken
 });
 
 export const CLEAR_AUTH = 'CLEAR_AUTH';
