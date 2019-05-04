@@ -35,11 +35,11 @@ export const authError = error => ({
 
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
-const storeAuthInfo = (authToken, dispatch) => {
-    const decodedToken = jwtDecode(authToken);    
-    dispatch(setAuthToken(authToken));
+const storeAuthInfo = (jwtToken, dispatch) => {
+    const decodedToken = jwtDecode(jwtToken);    
+    dispatch(setAuthToken(jwtToken));
     dispatch(authSuccess(decodedToken.user));
-    saveAuthToken(authToken);
+    saveAuthToken(jwtToken);
     
 };
 
@@ -89,23 +89,23 @@ export const login = (username, password) => dispatch => {
 
 export const refreshAuthToken = () => (dispatch, getState) => {
     dispatch(authRequest());
-    const authToken = getState().auth.authToken;
+    const jwtToken = getState().auth.jwtToken;
     return fetch(`${API_BASE_URL}/auth/refresh`, {
         method: 'POST',
         headers: {
             // Provide our existing token as credentials to get a new one
-            Authorization: `Bearer ${authToken}`
+            Authorization: `Bearer ${jwtToken}`
         }
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+        .then(({jwtToken}) => storeAuthInfo(jwtToken, dispatch))
         .catch(err => {
             // We couldn't get a refresh token because our current credentials
             // are invalid or expired, or something else went wrong, so clear
             // them and sign us out
             dispatch(authError(err));
             dispatch(clearAuth());
-            clearAuthToken(authToken);
+            clearAuthToken(jwtToken);
         });
 };
