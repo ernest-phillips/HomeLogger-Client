@@ -5,8 +5,10 @@ import {Link, Redirect} from 'react-router-dom';
 import Register from './Register';
 
 export function RegisterPage(props) {
-    
+    console.log(props)
     if (props.loggedIn) {
+        
+        console.log("We are logged in")
         return <Redirect to="/dashboard" />;
     }
     return (
