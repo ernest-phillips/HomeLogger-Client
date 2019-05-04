@@ -9,6 +9,7 @@ export default () => Component => {
       console.log("authenticating")
       return <div>Logging in...</div>;
     } else if (!loggedIn || error) {
+      console.log("returning to root")
       return <Redirect to="/" />;
     }
 
