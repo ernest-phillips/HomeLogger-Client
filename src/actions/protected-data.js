@@ -14,12 +14,12 @@ export const fetchProtectedDataError = error => ({
 });
 
 export const fetchProtectedData = () => (dispatch, getState) => {
-    const authToken = getState().auth.authToken;
+    const jwtToken = getState().auth.jwtToken;
     return fetch(`${API_BASE_URL}/protected`, {
         method: 'GET',
         headers: {
             // Provide our auth token as credentials
-            Authorization: `Bearer ${authToken}`
+            Authorization: `Bearer ${jwtToken}`
         }
     })
         .then(res => normalizeResponseErrors(res))
