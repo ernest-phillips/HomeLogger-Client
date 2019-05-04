@@ -16,10 +16,10 @@ const store = createStore(
 );
 
 // Hydrate the authToken from localStorage if it exist
-const authToken = loadAuthToken();
-if (authToken) {
+const jwtToken = loadAuthToken();
+if (jwtToken) {
     console.log("Auth token Refreshed!")
-    const token = authToken;
+    const token = jwtToken;
     store.dispatch(setAuthToken(token));
     store.dispatch(refreshAuthToken());
 }
