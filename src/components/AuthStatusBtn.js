@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
 function LogoutBtn(){
     return <a href="/">Sign Out</a>
@@ -9,8 +9,8 @@ function LoginBtn(){
 }
 
 export default function AuthStatusBtn (props) 
-    const isLoggedIn = props.isLoggedIn;
-    if (isLoggedIn) {
+   { // const isLoggedIn = props.isLoggedIn;
+    if (props.loggedIn) {
       return <LogoutBtn />;
     }
     return <LoginBtn />;
@@ -18,20 +18,12 @@ export default function AuthStatusBtn (props)
   
   
   
-  function GuestGreeting(props) {
-    return <h1>Please sign up.</h1>;
-  }
   
-  function Greeting(props) {
-    const isLoggedIn = props.isLoggedIn;
-    if (isLoggedIn) {
-      return <UserGreeting />;
-    }
-    return <GuestGreeting />;
-  }
   
-  ReactDOM.render(
-    // Try changing to isLoggedIn={true}:
-    <Greeting isLoggedIn={true} />,
-    document.getElementById('root')
-  );
+  
+  
+  // ReactDOM.render(
+  //   // Try changing to isLoggedIn={true}:
+  //   <Greeting isLoggedIn={true} />,
+  //   document.getElementById('root')
+  // );
