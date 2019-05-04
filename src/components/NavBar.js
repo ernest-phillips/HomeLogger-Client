@@ -23,7 +23,7 @@ class NavBar extends Component {
         <ul>
             <li> <a href="/">Home</a>   </li>
             <li> <a href="/story">Full Story</a> </li>
-            <li> <a href="/sign-in">Sign In</a>  </li>
+            <li>   </li>
           </ul>
           {this.state.active }
           <button type="button" onClick={this.handleClick}>Click</button>
