@@ -7,7 +7,7 @@ import {
 } from '../actions/auth';
 
 const initialState = {
-    authToken: null, // authToken !== null does not mean it has been validated
+    jwtToken: null, // jwtToken !== null does not mean it has been validated
     currentUser: null,
     loading: false,
     error: null
@@ -16,11 +16,11 @@ const initialState = {
 export default function reducer(state = initialState, action) {
     if (action.type === SET_AUTH_TOKEN) {
         return Object.assign({}, state, {
-            authToken: action.authToken
+            jwtToken: action.jwtToken
         });
     } else if (action.type === CLEAR_AUTH) {
         return Object.assign({}, state, {
-            authToken: null,
+            jwtToken: null,
             currentUser: null
         });
     } else if (action.type === AUTH_REQUEST) {
