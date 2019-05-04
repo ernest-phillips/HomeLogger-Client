@@ -8,7 +8,7 @@ function LoginBtn(){
     return <a href="/sign-in">Sign In</a>
 }
 
-export default function AuthStatus (props) 
+export default function AuthStatusBtn (props) 
     const isLoggedIn = props.isLoggedIn;
     if (isLoggedIn) {
       return <LogoutBtn />;
