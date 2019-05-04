@@ -72,7 +72,7 @@ export class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  hasAuthToken: state.auth.authToken !== null,
+  hasAuthToken: state.auth.jwtToken !== null,
   loggedIn: state.auth.currentUser !== null
 });
 
