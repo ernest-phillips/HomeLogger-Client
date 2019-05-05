@@ -7,6 +7,7 @@ import NewPassageBox from "./NewPassageBox";
 
 export class Dashboard extends React.Component {
   componentDidMount() {
+      console.log("Component mounted...Fetching Protected data")
     this.props.dispatch(fetchProtectedData());
   }
 
