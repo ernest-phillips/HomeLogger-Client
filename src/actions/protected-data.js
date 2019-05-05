@@ -14,6 +14,7 @@ export const fetchProtectedDataError = error => ({
 });
 
 export const fetchProtectedData = () => (dispatch, getState) => {
+    console.log("Accessing protected endpoint")
     const jwtToken = getState().auth.jwtToken;
     return fetch(`${API_BASE_URL}/protected`, {
         method: 'GET',
@@ -21,7 +22,9 @@ export const fetchProtectedData = () => (dispatch, getState) => {
             // Provide our auth token as credentials
             Authorization: `Bearer ${jwtToken}`
         }
-    })
+        
+    })  
+        .then(console.log("Protected endpoint success"))
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(({data}) => dispatch(fetchProtectedDataSuccess(data)))
