@@ -59,14 +59,7 @@ export const login = (username, password) => dispatch => {
         })
             
             .then(res => normalizeResponseErrors(res))
-            .then(res => res.json()) 
-            // .then(res => console.log(res.json()))
-            // .then((function(myJson){
-            //     console.log("doing this too")
-            //     console.log(JSON.stringify(myJson))
-            //     JSON.stringify(myJson)
-                
-            // }))          
+            .then(res => res.json())        
             .then(({jwtToken}) => storeAuthInfo(jwtToken, dispatch))               
             .catch(err => {
                 const {code} = err;
