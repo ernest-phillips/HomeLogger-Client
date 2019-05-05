@@ -6,6 +6,7 @@ import { required, nonEmpty } from "../validators";
 
 export class SignInForm extends Component {
   onSubmit(values) {
+    console.log(values)
     return this.props.dispatch(login(values.username, values.password));
   }
   render() {
