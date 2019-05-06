@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
-
+import { Redirect} from 'react-router-dom';
 import Register from './Register';
 
 export function RegisterPage(props) {
@@ -15,7 +14,7 @@ export function RegisterPage(props) {
         <div className="home">
             <h2>Register for Community Story</h2>
             <Register />
-            <Link to="/">Login</Link>
+           
         </div>
     );
 }
