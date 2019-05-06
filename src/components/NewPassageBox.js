@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {NewPassage} from '../actions/passages'
 import {Field, reduxForm, focus} from 'redux-form';
 
+
 export class NewPassageBox extends Component {
 
   onSubmit(passage){
@@ -21,7 +22,8 @@ export class NewPassageBox extends Component {
               this.onSubmit(passage)
             )}>
             <textarea 
-            id="newPassage"
+            id="body"
+            name="body"
             className = "passage-entry" 
             placeholder="Continue the story..."/>
             

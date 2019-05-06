@@ -1,6 +1,7 @@
 import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
+import axios from 'axios';
 
 export const NewPassage = passage => dispatch => {
     return fetch(`${API_BASE_URL}/passages`, {
@@ -24,3 +25,47 @@ export const NewPassage = passage => dispatch => {
             }
         });
 };
+
+
+
+// export default class PersonList extends React.Component {
+//   state = {
+//     author: {this.props.username},
+//     body:''
+//   }
+
+//   handleChange = event => {
+//     this.setState({ name: event.target.value });
+//   }
+
+//   handleSubmit = event => {
+//     event.preventDefault();
+
+//     const user = {
+//       name: this.state.name
+//     };
+
+//     axios.post(`https://jsonplaceholder.typicode.com/users`, { user })
+//       .then(res => {
+//         console.log(res);
+//         console.log(res.data);
+//       })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <form onSubmit={this.handleSubmit}>
+//           <label>
+//             Person Name:
+//             <input 
+//             type="text" 
+//             name="name" 
+//             onChange={this.handleChange} />
+//           </label>
+//           <button type="submit">Add</button>
+//         </form>
+//       </div>
+//     )
+//   }
+// }
