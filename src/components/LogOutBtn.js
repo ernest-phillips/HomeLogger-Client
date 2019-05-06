@@ -10,15 +10,16 @@ export class LogOutBtn extends Component {
     }
 
     render() {
-        // Only render the log out button if we are logged in
+        
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
+                <button onClick={() => this.logOut()}>Log Out</button>
             );
         }
         return (
             <div className="logout-btn">
+                {console.log(logOutButton)}
                 {logOutButton}
             </div>
         );
