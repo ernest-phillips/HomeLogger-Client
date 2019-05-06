@@ -14,12 +14,11 @@ export class LogOutBtn extends Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>Log Out</button>
+                <button className="logout-btn"onClick={() => this.logOut()}>Log Out</button>
             );
         }
         return (
-            <div className="logout-btn">
-                {console.log(logOutButton)}
+            <div >
                 {logOutButton}
             </div>
         );

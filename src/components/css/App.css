@@ -190,6 +190,19 @@ nav ul li a:hover, nav ul li a:active{
   padding-bottom: 8px;
 }
 
+.logout-btn{
+  text-decoration: none;
+  color: white;
+  background-color:#2C3E50;
+  font-size: 1.25rem;
+  border:none;
+  
+}
+.logout-btn:hover{
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
+  
+}
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 600px){
