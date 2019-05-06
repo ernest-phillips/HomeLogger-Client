@@ -7,14 +7,13 @@ import "./css/login.css";
 import About from "./About";
 import Header from "./Header";
 import Footer from "./Footer";
-// import SignInForm from "./SignIn-Form";
+import RegisterPage from './Register-Page'
 import SignInPage from './SignInPage'
 import NavBar from "./NavBar";
 import Dashboard from "./Dashboard";
 import FullStory from "./FullStory";
 import { refreshAuthToken } from "../actions/auth";
 
-import Register from "./Register";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 export class App extends Component {
@@ -59,7 +58,7 @@ export class App extends Component {
                 <Route exact path="/" component={About} />
                 <Route path="/sign-in" component={SignInPage} />
                 <Route path="/story" component={FullStory} />
-                <Route path="/register" component={Register} />
+                <Route path="/register" component={RegisterPage} />
                 <Route path="/dashboard" component={Dashboard} />
               </Switch>
               
