@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AuthStatusBtn from './AuthStatusBtn'
+import LogOutBtn from './LogOutBtn'
 
 class NavBar extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class NavBar extends Component {
       loggedIn: !this.state.loggedIn
     });
   }
+  
 
   render() {
     return (
@@ -25,9 +27,9 @@ class NavBar extends Component {
             <li> <a href="/">Home</a>   </li>
             <li> <a href="/story">Full Story</a> </li>
             <li>  <AuthStatusBtn /> </li>
+            <li><LogOutBtn /></li>
           </ul>
-          {this.state.active }
-          <button type="button" onClick={this.handleClick}>Click</button>
+          
         </nav>
       </div>
     );
