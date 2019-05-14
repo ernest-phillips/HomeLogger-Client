@@ -1,38 +1,52 @@
 import React, { Component } from "react";
 // import {NewPassage} from '../actions/passages'
-import { reduxForm, focus } from "redux-form";
-import axios from "axios";
+// import { reduxForm, focus } from "redux-form";
+// import axios from "axios";
 // import {storeAuthInfo} from '../actions/auth'
 import { API_BASE_URL } from "../config";
+
+let author = localStorage.getItem('username')
 
 export default class NewPassageBox extends Component {
     constructor(){
       super()
       this.state = {
-        body:''
+        body:'',
+        author: author
       }
       this.handleSubmit = this.handleSubmit.bind(this)
+      
     }
     
     handleSubmit(event){
       event.preventDefault();
       this.setState({
-        body: event.target.value
+        body: event.target.id,
+        
       })
-      const data = new FormData(event.target);
-      console.log(data)
+      
 
       fetch(`${API_BASE_URL}/passages`,{
         method: 'POST',
-        body: this.body,
+        headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        author,
+        
+        
+    })
         
       })
       .then(function(res){
+        console.log(res)
         return res.json()
     })
     .then((function(myJson){
         console.log(JSON.stringify(myJson))
     }))
+    
+    
     // .then(console.log(user.username))
     }
   render() {
@@ -62,3 +76,4 @@ export default class NewPassageBox extends Component {
     );
   }
 }
+
