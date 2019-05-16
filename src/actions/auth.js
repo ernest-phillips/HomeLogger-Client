@@ -37,8 +37,7 @@ export const authError = error => ({
 // the user data stored in the token
 const storeAuthInfo = (jwtToken, dispatch) => {
     const decodedToken = jwtDecode(jwtToken);  
-    console.log(decodedToken.user.username)  
-    localStorage.setItem('username', decodedToken.user.username)
+    console.log(decodedToken)  
     dispatch(setAuthToken(jwtToken));
     dispatch(authSuccess(decodedToken.user));
     saveAuthToken(jwtToken);
@@ -106,4 +105,3 @@ export const refreshAuthToken = () => (dispatch, getState) => {
             clearAuthToken(jwtToken);
         });
 };
-
