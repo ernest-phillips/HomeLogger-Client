@@ -27,10 +27,10 @@ export class NewPassageBox extends Component {
   }
   render() {
     return (
-      <div>
-        <fieldset>
+      <div className="passage-box">
+        
           <form
-            className="passage-box"
+            
             onSubmit={this.props.handleSubmit(passage =>
               this.onSubmit(passage)
             )}
@@ -45,7 +45,7 @@ export class NewPassageBox extends Component {
 
             <input type="submit" value="submit" className="submit-pass" />
           </form>
-        </fieldset>
+        
       </div>
     );
   }
