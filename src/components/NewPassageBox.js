@@ -9,23 +9,21 @@ export class NewPassageBox extends Component {
     const { author, body } = passage;
     const newPassage = { author, body };
     const NewPassage = passage => dispatch => {
-      return (
-        axios.post(`${API_BASE_URL}/passages`, {
-          body:body,
-          author:localStorage.getItem('username')
+      return axios
+        .post(`${API_BASE_URL}/passages`, {
+          body: body,
+          author: localStorage.getItem("username")
         })
         .then(function(res) {
           console.log(res);
         })
         .catch(function(error) {
           console.log(error);
-        }))
-        
+        });
     };
 
-    console.log(newPassage)
-    return this.props.dispatch(NewPassage(author,body));
-
+    console.log(newPassage);
+    return this.props.dispatch(NewPassage(author, body));
   }
   render() {
     return (
@@ -37,7 +35,7 @@ export class NewPassageBox extends Component {
               this.onSubmit(passage)
             )}
           >
-            <Field              
+            <Field
               name="body"
               component="input"
               type="text"
