@@ -16,6 +16,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * ES6
 * SASS
 
-
+## Collaborators
+erndevelops
 <img src="public/images/homeScreen.PNG" alt="homepage screenshot" width="400">
 
