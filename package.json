@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "redux-thunk": "^2.3.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
