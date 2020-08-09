@@ -4,8 +4,10 @@
   "private": true,
   "devDependencies": {},
   "dependencies": {
+    "final-form": "^4.20.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-final-form": "^6.5.1",
     "react-router-dom": "^5.2.0",
     "redux-thunk": "^2.3.0"
   },
