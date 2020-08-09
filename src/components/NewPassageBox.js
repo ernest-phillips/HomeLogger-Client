@@ -1,3 +1,5 @@
+//Changed to react-final-form https://final-form.org/docs/react-final-form/getting-started
+
 import React, { Component } from "react";
 // import {NewPassage} from '../actions/passages'
 import { Field, reduxForm, focus } from "redux-form";
